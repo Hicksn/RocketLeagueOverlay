@@ -1,0 +1,508 @@
+<!--
+
+Coded by Slumware(#9370)
+Please follow me on YouTube and Twitch
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Yeet</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+    <script type="text/javascript" src="C:\Users\Gamer\SOSoverlays\Overlay\logic.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-transform/1.0.4/d3-transform.min.js" integrity="sha512-mxtQ5axoakkabgk9lnYJsaCL+BryRmZ4py80vqOf8UIbZhwc+m1bqmnge6Khd7sOLh2gPFCaKiynJEnqR79CaA==" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'>
+    <link rel="stylesheet" href="./overlay_style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/oaj0rva.css">
+
+
+</head>
+<body>
+    <script>
+        function readB(button, box) {
+            var num = document.getElementById(button).value;
+            if (num == 0) {
+                document.getElementById(box).setAttribute("style", "visibility:hidden");
+                document.getElementById(button).value = 1;
+            } else if (num == 1) {
+                document.getElementById(box).setAttribute("style", "visibility:visable");
+                document.getElementById(button).value = 0;
+            }
+        }
+    </script>
+    <!-- partial:index.partial.html -->
+    
+
+    <div id="end-stats">
+        <h1 class="end-card-team-name" id="end-card-blue-team-name">ekuvhb</h1>
+        <h1 class="end-card-team-name" id="end-card-orange-team-name">ekuvhb</h1>
+        <table id="stat-table" entries="10" class="table-bordered table-striped dataTable">
+            <tbody data-test="table-body">
+                <tr class="end_table">
+                    <td class="stats"><span id="player1_name">name</span></td>
+                    <td class="stats"><span id="player2_name">name</span></td>
+                    <td class="stats" id="player3_name">name</td>
+                    <td id="spacer"></td>
+                    <td class="stats" id="player4_name">name</td>
+                    <td class="stats" id="player5_name">name</td>
+                    <td class="stats" id="player6_name">name</td>
+
+                </tr>
+                <tr class="end_table">
+                    <td class="stats" id="player1_score">0</td>
+                    <td class="stats" id="player2_score">0</td>
+                    <td class="stats" id="player3_score">0</td>
+                    <td id="spacer"></td>
+                    <td class="stats" id="player4_score">0</td>
+                    <td class="stats" id="player5_score">0</td>
+                    <td class="stats" id="player6_score">0</td>
+
+                </tr>
+
+                <tr class="end_table">
+                    <td class="stats" id="player1_goals">0</td>
+                    <td class="stats" id="player2_goals">0</td>
+                    <td class="stats" id="player3_goals">0</td>
+                    <td id="spacer"></td>
+                    <td class="stats" id="player4_goals">0</td>
+                    <td class="stats" id="player5_goals">0</td>
+                    <td class="stats" id="player6_goals">0</td>
+
+                </tr>
+                <tr class="end_table">
+                    <td class="stats" id="player1_assists">0</td>
+                    <td class="stats" id="player2_assists">0</td>
+                    <td class="stats" id="player3_assists">0</td>
+                    <td id="spacer"></td>
+                    <td class="stats" id="player4_assists">0</td>
+                    <td class="stats" id="player5_assists">0</td>
+                    <td class="stats" id="player6_assists">0</td>
+
+                </tr>
+                <tr class="end_table">
+                    <td class="stats" id="player1_saves">0</td>
+                    <td class="stats" id="player2_saves">0</td>
+                    <td class="stats" id="player3_saves">0</td>
+                    <td id="spacer"></td>
+                    <td class="stats" id="player4_saves">0</td>
+                    <td class="stats" id="player5_saves">0</td>
+                    <td class="stats" id="player6_saves">0</td>
+
+
+                </tr>
+                <tr class="end_table">
+
+                    <td class="stats" id="player1_shots">0</td>
+                    <td class="stats" id="player2_shots">0</td>
+                    <td class="stats" id="player3_shots">0</td>
+                    <td id="spacer"></td>
+                    <td class="stats" id="player4_shots">0</td>
+                    <td class="stats" id="player5_shots">0</td>
+                    <td class="stats" id="player6_shots">0</td>
+
+                </tr>
+                <tr class="end_table">
+                    <td class="stats" id="player1_demos">0</td>
+                    <td class="stats" id="player2_demos">0</td>
+                    <td class="stats" id="player3_demos">0</td>
+                    <td id="spacer"></td>
+                    <td class="stats" id="player4_demos">0</td>
+                    <td class="stats" id="player5_demos">0</td>
+                    <td class="stats" id="player6_demos">0</td>
+
+                </tr>
+                <tr class="end_table">
+                    <td class="stats" id="player1_balltouches"></td>
+                    <td class="stats" id="player2_balltouches"></td>
+                    <td class="stats" id="player3_balltouches"></td>
+                    <td id="spacer"></td>
+                    <td class="stats" id="player4_balltouches"></td>
+                    <td class="stats" id="player5_balltouches"></td>
+                    <td class="stats" id="player6_balltouches"></td>
+
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+    <div id="main-ui">
+        <div class="row">
+
+            <!-- blue team code-->
+            <div class="col m-4" id="left">
+                <div class="team-name-box p-1 " id="blue-team-name-box">
+                    <!-- left team name and score-->
+                    <div class="team_name_box w-100 h-100 text-light text-center">
+                        <div class="team-icon" id="blue-team-icon"></div>
+                        <p class="team-name" id="blue-team-name"></p>
+                    </div>
+                </div>
+                <div class="active-info-box h-80 d-flex align-items-start flex-column">
+
+                    <!-- blue team active player card-->
+                    <div class="mt-auto card  border-dark bg-blue-team mb-0 active-box" style="max-width: 18rem;" id="blue-team-active">
+                        <div class="card-header h2 text-center" id="blue-active-name">Name</div>
+                        <div class="container p-0">
+                            <div class="row mr-0">
+                                <div class="col-10 pr-0">
+                                    <table class="w-100 h-100">
+
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">Speed</th>
+                                                <td id="blue-active-speed" class="h5">0</td>
+                                                <th>Goals</th>
+                                                <td id="blue-active-goals" class="h5">0</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Demos</th>
+                                                <td id="blue-active-demos" class="h5">0</td>
+                                                <th>Shots</th>
+                                                <td id="blue-active-shots" class="h5">0</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Saves</th>
+                                                <td id="blue-active-saves" class="h5">0</td>
+                                                <th>Assists</th>
+                                                <td id="blue-active-assists" class="h5">0</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Touches</th>
+                                                <td id="blue-active-touches" class="h5">1</td>
+                                                <th>Score</th>
+                                                <td id="blue-active-score" class="h5">6</td>
+                                            </tr>
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                                <div class="col-2 p-0">
+
+                                    <div class="progress mx-auto border border-dark" style="height: 135px; width: 100%;">
+                                        <div class="progress-bar bg-dark" role="progressbar" style="height: 20%; width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="blue-active-p-bar">
+                                            <span class="text-light" id="blue-active-boost">0</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- blue team boxes-->
+                    <div class="mt-3">
+
+
+                        <!-- blue player 3 -->
+                        <div class="player-box border border-dark bg-blue-team rounded mt-2 d-none" id="blue-player-3">
+                            <!-- players name -->
+                            <h4 class="text-center" id="blue-player-3-name">name</h4>
+                            <!-- boost bar -->
+                            <div class="progress mx-auto border border-dark rounded-0" style="height: 30px; width: 100%; bottom: 0px;">
+                                <div class="progress-bar bg-dark" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="blue-player-3-p-bar">
+                                    <span class="text-light" id="blue-player-3-boost">20%</span>
+                                </div>
+                            </div>
+                            <!-- stat counters -->
+                            <div class="container p-1">
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-1 h5"><i class="fas fa-futbol"></i></div>
+                                    <div class="col-sm-1 h5" id="blue-player-3-goals">1</div>
+                                    <div class="col-sm-1 h5"><i class="fas fa-hands-helping"></i></div>
+                                    <div class="col-sm-1 h5" id="blue-player-3-assists">1</div>
+                                    <div class="col-sm-1 h5"><i class="fas fa-shield-alt"></i></div>
+                                    <div class="col-sm-1 h5" id="blue-player-3-saves">1</div>
+                                    <div class="col-sm-1 h5"><i class="fas fa-bullseye"></i></div>
+                                    <div class="col-sm-1 h5" id="blue-player-3-shots">1</div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!-- blue player 2 -->
+                        <div class="player-box border border-dark  bg-blue-team rounded mt-2 d-none" id="blue-player-2">
+                            <!-- players name -->
+                            <h4 class="text-center" id="blue-player-2-name">name</h4>
+                            <!-- boost bar -->
+                            <div class="progress mx-auto border border-dark rounded-0" style="height: 30px; width: 100%; bottom: 0px;">
+                                <div class="progress-bar bg-dark" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="blue-player-2-p-bar">
+                                    <span class="text-light" id="blue-player-2-boost">20%</span>
+                                </div>
+                            </div>
+                            <!-- stat counters -->
+                            <div class="container p-1">
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-1 h5"><i class="fas fa-futbol"></i></div>
+                                    <div class="col-sm-1 h5" id="blue-player-2-goals">1</div>
+                                    <div class="col-sm-1 h5"><i class="fas fa-hands-helping"></i></div>
+                                    <div class="col-sm-1 h5" id="blue-player-2-assists">1</div>
+                                    <div class="col-sm-1 h5"><i class="fas fa-shield-alt"></i></div>
+                                    <div class="col-sm-1 h5" id="blue-player-2-saves">1</div>
+                                    <div class="col-sm-1 h5"><i class="fas fa-bullseye"></i></div>
+                                    <div class="col-sm-1 h5" id="blue-player-2-shots">1</div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- blue player 1 -->
+                        <div class="player-box border border-dark  bg-blue-team rounded mt-2 d-none" id="blue-player-1">
+                            <!-- players name -->
+                            <h4 class="text-center" id="blue-player-1-name">name</h4>
+                            <!-- boost bar -->
+                            <div class="progress mx-auto border border-dark rounded-0" style="height: 30px; width: 100%; bottom: 0px;">
+                                <div class="progress-bar bg-dark" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="blue-player-1-p-bar">
+                                    <span class="text-light" id="blue-player-1-boost">20%</span>
+                                </div>
+                            </div>
+                            <!-- stat counters -->
+                            <div class="container p-1">
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-1 h5"><i class="fas fa-futbol"></i></div>
+                                    <div class="col-sm-1 h5" id="blue-player-1-goals">1</div>
+                                    <div class="col-sm-1 h5"><i class="fas fa-hands-helping"></i></div>
+                                    <div class="col-sm-1 h5" id="blue-player-1-assists">1</div>
+                                    <div class="col-sm-1 h5"><i class="fas fa-shield-alt"></i></div>
+                                    <div class="col-sm-1 h5" id="blue-player-1-saves">1</div>
+                                    <div class="col-sm-1 h5"><i class="fas fa-bullseye"></i></div>
+                                    <div class="col-sm-1 h5" id="blue-player-1-shots">1</div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- score, time and team names-->
+            <div class="col mh-4" id="middle">
+                <table class="game-info">
+                    <tr>
+                        <td width="25%">
+                            <div class="team-score-box blue-score-box text-light text-center" id="blue-team-score-box">
+                                <h1 class="score display-5" id="blue-score">0</h1>
+                            </div>
+                            <div class="win_box row blue-win-box" id="blue-win-box">
+                                <!--<div class="win_marks col m-4" id="blue_win_6"></div>-->
+                                
+                                <button class="win_marks " onclick="readB('blue_button_4','blue_win_4')" value="1" id="blue_button_4" name="options" label="4" type="button" role="button">
+                                    <div style="visibility:hidden" class=" col  blue-win-marks" id="blue_win_4"></div>
+                                </button>
+                                <button class="win_marks " onclick="readB('blue_button_3','blue_win_3')" value="1" id="blue_button_3" name="options" label="3" type="button" role="button">
+                                    <div style="visibility:hidden" class=" col  blue-win-marks" id="blue_win_3"></div>
+                                </button>
+                                <button class="win_marks " onclick="readB('blue_button_2','blue_win_2')" value="1" id="blue_button_2" name="options" label="2" type="button" role="button">
+                                    <div style="visibility:hidden" class=" col blue-win-marks" id="blue_win_2"></div>
+                                </button>
+                                <button class="win_marks " onclick="readB('blue_button_1','blue_win_1')" value="1" id="blue_button_1" name="options" label="1" type="button" role="button">
+                                    <div style="visibility:hidden" class=" col blue-win-marks" id="blue_win_1"></div>
+                                </button>
+                            </div>
+                        </td><!-- team 1 score -->
+                        <td width="50%">
+                            <div class="timer-box">
+                                <!-- time -->
+                                <div class="w-100 bg-dark text-light text-center rounded" id="timer_text_box">
+                                    <p class="mb-0 lead" id="overtime-text">Overtime</p>
+                                    <textarea class="display-5" id="series">Best of 7</textarea>
+                                    <h1 class="display-5" id="timer"></h1>
+                                </div>
+                            </div>
+                        </td><!-- time -->
+                        <td width="25%">
+                            <div class="team-score-box orange-score-box text-light text-center" id="orange-team-score-box">
+                                <!-- right team name and score -->
+                                <h1 class="score display-5" id="orange-score">0</h1>
+                            </div>
+                            <div class="win_box row orange-win-box" id="orange-win-box">
+                                
+                                <button class="win_marks" onclick="readB('orange_button_4','orange_win_4')" value="1" id="orange_button_4" name="options" label="4" type="button" role="button">
+                                    <div style="visibility:hidden" class=" col orange-win-marks" id="orange_win_4"></div>
+                                </button>
+                                <button class="win_marks" onclick="readB('orange_button_3','orange_win_3')" value="1" id="orange_button_3" name="options" label="3" type="button" role="button">
+                                    <div style="visibility:hidden" class=" col orange-win-marks" id="orange_win_3"></div>
+                                </button>
+                                <button class="win_marks" onclick="readB('orange_button_2','orange_win_2')" value="1" id="orange_button_2" name="options" label="2" type="button" role="button">
+                                    <div style="visibility:hidden" class=" col orange-win-marks" id="orange_win_2"></div>
+                                </button>
+                                <button class="win_marks" onclick="readB('orange_button_1','orange_win_1')" value="1" id="orange_button_1" name="options" label="1" type="button" role="button">
+                                    <div style="visibility:hidden" class=" col orange-win-marks" id="orange_win_1"></div>
+                                </button>
+                            </div>
+                        </td><!-- team 2 score -->
+                    </tr>
+                </table>
+
+                    <h1 id="replay">Replay</h1>
+
+            </div>
+
+            <!-- orange team code -->
+            <div class="col m-4" id="right">
+                <div class="team-name-box p-1" id="orange-team-name-box">
+                    <!-- right team name and score -->
+                    <div class="team_name_box w-100 h-100 text-light text-center">
+                        <div class="team-icon" id="orange-team-icon"></div>
+                        <p class="team-name" id="orange-team-name"></p>
+                    </div>
+                </div>
+                <div id="right-active-info" class="active-info-box h-80 d-flex align-items-end flex-column">
+                    <!-- orange team active player card-->
+                    <div class="mt-auto card border-dark bg-orange-team mb-0 active-box" style="max-width: 18rem;" id="orange-team-active">
+                        <div class="card-header h2 text-center" id="orange-active-name">Name</div>
+                        <div class="container p-0">
+                            <div class="row m-0">
+                                
+                                <div class="col-2 p-0">
+
+                                    <div class="progress mx-auto border border-dark" style="height: 135px; width: 100%;">
+                                        <div class="progress-bar bg-dark" role="progressbar" style="height: 20%; width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="orange-active-p-bar">
+                                            <span class="text-light" id="orange-active-boost">0</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                
+                                <div class="col-10 p-0 active-info-table">
+                                    <table class="h-100 w-100">
+
+                                        <tbody>
+                                            <tr>
+
+                                                <th scope="row">Goals</th>
+                                                <td id="orange-active-goals" class="h5">0</td>
+                                                <th>Speed</th>
+                                                <td id="orange-active-speed" class="h5">0</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Shots</th>
+                                                <td id="orange-active-shots" class="h5">0</td>
+                                                <th>Demos</th>
+                                                <td id="orange-active-demos" class="h5">0</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Assists</th>
+                                                <td id="orange-active-assists" class="h5">0</td>
+                                                <th>Saves</th>
+                                                <td id="orange-active-saves" class="h5">0</td>
+
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Score</th>
+                                                <td id="orange-active-score" class="h5">6</td>
+                                                <th>Touches</th>
+                                                <td id="orange-active-touches" class="h5">1</td>
+
+                                            </tr>
+                                        </tbody>
+
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- orange team boxes-->
+                    <div class="mt-3">
+
+
+                        <!-- orange player 3 -->
+                        <div class="player-box border border-dark  bg-orange-team rounded mt-2 d-none" id="orange-player-3">
+                            <!-- players name -->
+                            <h4 class="text-center" id="orange-player-3-name">name</h4>
+                            <!-- boost bar -->
+                            <div class="progress mx-auto border border-dark rounded-0 justify-content-end" style="height: 30px; width: 100%; bottom: 0px;">
+                                <div class="progress-bar bg-dark" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="orange-player-3-p-bar">
+                                    <span class="text-light" id="orange-player-3-boost">20%</span>
+                                </div>
+                            </div>
+                            <!-- stat counters -->
+                            <div class="container p-1">
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-1 h5"><i class="fas fa-futbol"></i></div>
+                                    <div class="col-sm-1 h5" id="orange-player-3-goals">1</div>
+                                    <div class="col-sm-1 h5"><i class="fas fa-hands-helping"></i></div>
+                                    <div class="col-sm-1 h5" id="orange-player-3-assists">1</div>
+                                    <div class="col-sm-1 h5"><i class="fas fa-shield-alt"></i></div>
+                                    <div class="col-sm-1 h5" id="orange-player-3-saves">1</div>
+                                    <div class="col-sm-1 h5"><i class="fas fa-bullseye"></i></div>
+                                    <div class="col-sm-1 h5" id="orange-player-3-shots">1</div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- orange player 2 -->
+                        <div class="player-box border border-dark bg-orange-team rounded mt-2 d-none" id="orange-player-2">
+                            <!-- players name -->
+                            <h4 class="text-center" id="orange-player-2-name">name</h4>
+                            <!-- boost bar -->
+                            <div class="progress mx-auto border border-dark rounded-0 justify-content-end" style="height: 30px; width: 100%; bottom: 0px;">
+                                <div class="progress-bar bg-dark" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="orange-player-2-p-bar">
+                                    <span class="text-light" id="orange-player-2-boost">20%</span>
+                                </div>
+                            </div>
+                            <!-- stat counters -->
+                            <div class="container p-1">
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-1 h5"><i class="fas fa-futbol"></i></div>
+                                    <div class="col-sm-1 h5" id="orange-player-2-goals">1</div>
+                                    <div class="col-sm-1 h5"><i class="fas fa-hands-helping"></i></div>
+                                    <div class="col-sm-1 h5" id="orange-player-2-assists">1</div>
+                                    <div class="col-sm-1 h5"><i class="fas fa-shield-alt"></i></div>
+                                    <div class="col-sm-1 h5" id="orange-player-2-saves">1</div>
+                                    <div class="col-sm-1 h5"><i class="fas fa-bullseye"></i></div>
+                                    <div class="col-sm-1 h5" id="orange-player-2-shots">1</div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- orange player 1 -->
+                        <div class="player-box border border-dark bg-orange-team rounded mt-2 d-none" id="orange-player-1">
+                            <!-- players name -->
+                            <h4 class="text-center" id="orange-player-1-name">name</h4>
+                            <!-- boost bar -->
+                            <div class="progress mx-auto border border-dark rounded-0 justify-content-end" style="height: 30px; width: 100%; bottom: 0px;">
+                                <div class="progress-bar bg-dark" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" id="orange-player-1-p-bar">
+                                    <span class="text-light" id="orange-player-1-boost">20%</span>
+                                </div>
+                            </div>
+                            <!-- stat counters -->
+                            <div class="container p-1">
+                                <div class="row">
+                                    <div class="col-sm-1"></div>
+                                    <div class="col-sm-1 h5"><i class="fas fa-futbol"></i></div>
+                                    <div class="col-sm-1 h5" id="orange-player-1-goals">1</div>
+                                    <div class="col-sm-1 h5"><i class="fas fa-hands-helping"></i></div>
+                                    <div class="col-sm-1 h5" id="orange-player-1-assists">1</div>
+                                    <div class="col-sm-1 h5"><i class="fas fa-shield-alt"></i></div>
+                                    <div class="col-sm-1 h5" id="orange-player-1-saves">1</div>
+                                    <div class="col-sm-1 h5"><i class="fas fa-bullseye"></i></div>
+                                    <div class="col-sm-1 h5" id="orange-player-1-shots">1</div>
+                                    <div class="col-sm-1"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js'></script>
+</body>
+</html>

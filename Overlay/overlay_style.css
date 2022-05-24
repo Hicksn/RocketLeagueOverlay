@@ -1,0 +1,363 @@
+body {
+    width: 1920px;
+    height: 1080px;
+    color: #ffffff !important;
+    font-family:'futura-pt' !important;
+}
+#end-stats {
+    width: 1920px;
+    height: 1080px;
+    background: url(C:/Users/Gamer/SOSoverlays/Assets/bearbackgroundnew.png);
+    background-size: 100% 100%;
+    display: none;
+}
+#player_names {
+    position:relative;
+    top:50px;
+}
+#spacer {
+    width:200px!important;
+}
+.stats {
+    width:146.666666px!important;
+}
+#stat-table {
+    position:absolute;
+    top:100px;
+    height:950px;
+    width:1920px;
+    text-align:center;
+    font-size:30px;
+}
+table, th, td {
+    border: 0px solid white!important;
+    border-collapse: collapse;
+    word-break:break-all;
+}
+td {
+    max-width:302px;
+    /*font-size:1.5625vw;*/
+}
+.end_table {
+    min-width:0px!important;
+    height:100px!important;
+}
+.row {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+  .player-box{
+    width: 300px;
+    height: 100px;
+    
+  }
+
+.active-box {
+    width: 280px;
+    height: 200px;
+    /*background: rgba(ff, ff, ff, 0.8) !important;*/
+}
+  
+  .timer-box{
+    width: 100%;
+    height: 125px;
+    
+  }
+  
+  .map-box{
+    width: 380px;
+    height: 300px;
+    position: relative;
+  }
+  
+  .player{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+  }
+  
+  .bg-blue-team{
+    background-color: #1500d4;
+    border:0px;
+  }
+  
+  .bg-orange-team{
+    background-color: #f75500; 
+  }
+#main-ui {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    bottom: 15px;
+    background: url(C:/Users/Gamer/SOSoverlays/Assets/Gameoverlay/bearbackgroundbest.png);
+    background-size: 100% 100%;
+    display: block;
+}
+  .row{
+    width:100%;
+    height:100%;
+  }
+  .h-80{
+    width:100%;
+    height:80%;
+  }
+#timer_text_box {
+    background: rgba(00, 00, 00, 0.0) !important;
+    height: 100%;
+}
+#series {
+    opacity: 100% !important;
+    position: absolute;
+    top: 130px;
+    left:130px;
+}
+#timer {
+    opacity: 100% ;
+    position: absolute;
+    top:43px;
+    left:230px;
+    font-size: 55px;
+}
+
+.game-info{
+  width: 100% !important;
+  height: 150px !important;
+  margin-top: 7px;
+  position:relative;
+  left:20px;
+}
+
+.team-name-box{
+  position: relative;
+  bottom: 20px;
+  width:500px;
+  height:108px;
+  background:rgba(00,00,00,00)!important;
+  border:0px!important;
+}
+.team-score-box {
+    position: relative;
+    bottom: 28px;
+    height: 100px;
+   
+    margin-bottom: 0px !important;
+}
+
+.timer-box{
+  height: 100px;
+  margin-bottom: 75px!important;
+}
+#left{
+  margin-right: 0px!important;
+  padding-right: 0px;
+}
+#blue-team-name {
+    position: absolute;
+    left: -90px;
+    top: 50px;
+    text-align: left !important;
+    padding-right: 5px;
+    font-size: 45px;
+}
+#middle{
+  padding-left: 0px;
+  padding-right: 0px;
+  background:rgba(00,00,00,00)!important;
+}
+#right{
+  margin-left: 0px!important;
+  padding-left: 0px;
+}
+#orange-team-name {
+    text-align: right !important;
+    padding-left: 5px;
+
+
+    font-size: 45px;
+    position:absolute;
+    top:50px;
+    left:100px;
+}
+#orange-name-box {
+    width: 400px;
+    height: 100px;
+    position: relative;
+    bottom: 100px;
+}
+.score {
+    margin-bottom: 0px !important;
+    font-size: 80px;
+}
+.win_marks{
+  height: 100%;
+  background-color: black;
+  padding-left: 0px;
+  padding-right: 0px;
+  border-radius: 10px;
+  margin-top: 0px!important;
+  margin-right: 25px;
+  margin-left: 0px!important;
+  margin-bottom: 0px!important;
+  width: 61px!important;
+}
+.win_box{
+  width: 320px;
+  height: 12px;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+button {
+    background-color: transparent !important;
+    margin-left: 0px !important;
+    opacity: 100% !important;
+    width: 21px;
+    height: 50px;
+    padding: 0px;
+    border: 0px;
+}
+.active-info-box {
+    position:absolute;
+    bottom:-0px;
+}
+#overtime-text {
+    opacity: 100% !important;
+    font-size: 25px;
+    position:absolute;
+    top:15px;
+    left:235px;
+}
+.team-name {
+    width:450px;
+    height:100px;
+}
+.team-icon {
+    width:100px;
+    height:100px;
+}
+#blue-team-icon {
+    background: url(C:/Users/Gamer/SOSoverlays/icons/team1.png);
+    background-size: 100% 100%;
+    position:absolute;
+    left:-197px;
+    top:30px;
+}
+#orange-team-icon {
+    background: url(C:/Users/Gamer/SOSoverlays/icons/team2.png);
+    background-size: 100% 100%;
+    position: absolute;
+    left: 562px;
+    top:30px;
+}
+#right-active-info {
+    position:absolute;
+    right:15px;
+}
+.active-info-table {
+    width:100%!important;
+}
+.end-card-team-name {
+    font-size:50px;
+    position:absolute;
+    width:500px;
+    height:100px;
+    top:10px;
+    text-align:center;
+}
+
+#end-card-blue-team-name {
+    
+    left:330px;
+}
+#end-card-orange-team-name {
+    left:1060px;
+}
+.h5 {
+    width: 40px !important;
+}
+textarea {
+    background:rgba(01,01,01,0);
+    font-size:25px;
+    color:white;
+    height:42px;
+    width:300px;
+    text-align:center;
+    border:0px;
+}
+#blue-score {
+    position:absolute;
+    left: 70px;
+    top:17px;
+}
+#orange-score {
+    position:absolute;
+    left:-8px;
+    top:17px;
+}
+#blue-team-name-box {
+    position:relative;
+    left:290px;
+}
+#orange-team-name-box {
+    position: relative;
+    right: 150px;
+}
+#replay {
+    font-size:30px;
+    position:absolute;
+    top:105px;
+    left:262px;
+}
+
+#blue-win-box {
+    position:absolute;
+    top:141px;
+    left:-168px;
+}
+.blue-win-marks {
+    background: url(C:/Users/Gamer/SOSoverlays/Assets/Gameoverlay/bluewin.png);
+    background-size: 100% 100%;
+    height: 100%;
+    
+    padding-left: 0px;
+    padding-right: 0px;
+    border-radius: 0px;
+    margin-top: 0px !important;
+    margin-right: 0px ;
+    margin-left: 0px !important;
+    margin-bottom: 0px !important;
+    width: 61px!important;
+}
+#blue_button_1 {
+    margin-right:0px!important;
+}
+#orange-win-box {
+    position: absolute;
+    top: 141px;
+    left: 419px;
+}
+.orange-win-marks {
+    background: url(C:/Users/Gamer/SOSoverlays/Assets/Gameoverlay/orangewin.png);
+    background-size: 100% 100%;
+    height: 100%;
+
+    padding-left: 0px;
+    padding-right: 0px;
+    border-radius: 0px;
+    margin-top: 0px !important;
+    margin-right: 0px;
+    margin-left: 0px !important;
+    margin-bottom: 0px !important;
+    width: 61px !important;
+}
+#orange_button_1 {
+    margin-right: 0px !important;
+    z-index: 1;
+}
+#orange_button_2 {
+    z-index: 1;
+    margin-right: 22px !important;
+}
+#orange_button_3 {
+    margin-right:23px!important;
+}
